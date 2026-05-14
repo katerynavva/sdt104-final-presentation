@@ -832,3 +832,173 @@ footer {
   .topbar-phone { display: none; }
   .footer-links { gap: 14px; }
 }
+
+/* ===== MODAL ===== */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 50, 70, 0.6);
+}
+
+.modal-content {
+  background: #e6eef5;
+  margin: 12% auto;
+  padding: 25px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #a0b8cc;
+  border-radius: 6px;
+}
+
+.modal-content button {
+  background: #5c7ea6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background: #4a6a8f;
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ===================== AUTH MODAL (LOGIN / REGISTER) ===================== */
+
+.auth-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 50, 70, 0.65);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* когда открыто */
+.auth-modal.open {
+  display: flex;
+}
+
+.auth-box {
+  width: 360px;
+  background: #e6eef5;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  position: relative;
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.auth-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #2c3e50;
+}
+
+/* Tabs (Login / Register) */
+.auth-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #b8c7d6;
+}
+
+.auth-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #5a6b7b;
+  transition: 0.2s;
+}
+
+.auth-tab.active {
+  color: #1a9ea0;
+  border-bottom: 2px solid #1a9ea0;
+}
+
+/* Forms */
+.auth-form {
+  display: none;
+  flex-direction: column;
+}
+
+.auth-form.active {
+  display: flex;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #a0b8cc;
+  outline: none;
+  font-family: var(--font-main);
+}
+
+.auth-form button {
+  background: #5c7ea6;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.auth-form button:hover {
+  background: #4a6a8f;
+}
+
+/* validation messages */
+.auth-msg {
+  font-size: 0.78rem;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.auth-msg.error {
+  color: #d63031;
+}
+
+.auth-msg.success {
+  color: #2ecc71;
+}

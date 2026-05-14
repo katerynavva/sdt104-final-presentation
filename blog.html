@@ -9,7 +9,51 @@
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
+<!-- SUBSCRIBE MODAL -->
+<div id="subscribeModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="subscribeClose">&times;</span>
 
+    <h2>Subscribe</h2>
+    <p>Enter your email to get updates</p>
+
+    <input type="email" id="subscribeEmail" placeholder="Your email" required>
+    <button id="subscribeSend">Subscribe</button>
+
+    <p id="subscribeMessage"></p>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div id="authModal" class="auth-modal">
+  <div class="auth-box">
+
+    <span class="auth-close" id="authClose">&times;</span>
+
+    <div class="auth-tabs">
+      <div class="auth-tab active" data-tab="login">Login</div>
+      <div class="auth-tab" data-tab="register">Register</div>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="auth-form active">
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <p class="auth-msg" id="loginMsg"></p>
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- REGISTER -->
+    <form id="registerForm" class="auth-form">
+      <input type="text" id="regName" placeholder="Full Name" required />
+      <input type="email" id="regEmail" placeholder="Email" required />
+      <input type="password" id="regPassword" placeholder="Password (min 6 chars)" required />
+      <p class="auth-msg" id="registerMsg"></p>
+      <button type="submit">Create Account</button>
+    </form>
+
+  </div>
+</div>
 <!-- Decorative side elements -->
 <div class="side-deco left" aria-hidden="true">
   <svg viewBox="0 0 44 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,7 +168,7 @@
 <section class="subscribe-section">
   <div class="subscribe-bg"></div>
   <h2>SUBSCRIBE TO GET NEW ARTICLES<br>DELIVERED TO YOUR INBOX</h2>
-  <button class="btn-subscribe">Subscribe</button>
+  <button class="btn-subscribe" id="openSubscribe">Subscribe</button>
 </section>
 
 <!-- FOOTER -->
